@@ -106,7 +106,7 @@ En la siguiente línea se le dan los permisos correspondientes de ejecución al 
 	echo Nombre del nuevo script:
 	read script_name
 	script_name="$script_name.sh"
-	echo -e "#!/bin/bash \nScript generado por Rodrigo Dominguez Jimenez el 	$fecha" > "$script_name"
+	echo -e "#!/bin/bash \nScript generado por Rodrigo Dominguez Jimenez el $fecha" > "$script_name"
 	chmod +x "$script_name"
 	echo Creando archivo
 	echo ...
@@ -127,7 +127,7 @@ Este script fué el que más disfruté elaborar. A continuación muestro el cód
 	echo Nombre del nuevo script:
 	read script_name
 	script_name="$script_name.sh"
-	echo -e "#!/bin/bash \nScript generado por Rodrigo Dominguez Jimenez el 	$fecha" > "$script_name"
+	echo -e "#!/bin/bash \nScript generado por Rodrigo Dominguez Jimenez el $fecha" > "$script_name"
 	chmod +x "$script_name"
 	echo Creando archivo
 	echo ...
