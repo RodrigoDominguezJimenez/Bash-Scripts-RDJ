@@ -28,7 +28,6 @@ Está es la parte importante, ya que el comando **mv** mueve el archivo que ingr
 	sudo mv $1 /Papelera
 	sleep 2
 	echo Archivo borrado
-
 Es un código muy sencillo con varias áreas de mejora, pero iré aprendiendo más con la práctica.
 A continuación muestro el código ya completo.
 
