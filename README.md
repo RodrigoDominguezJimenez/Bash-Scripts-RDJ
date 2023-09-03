@@ -8,7 +8,6 @@ A continuación se explica mi código.
 Al ejecutar el script es importante que el usuario indique que archivo borrar en la misma linea, por ejemplo:
 
 	bash borra_archivos.sh ejemplo.txt
-
 Ahora vayamos al código.
 Esta parte del código solamente indicamos en interprete de nuestro sistema y un encabezado de presentación.
 
@@ -17,7 +16,6 @@ Esta parte del código solamente indicamos en interprete de nuestro sistema y un
 	#Rodrigo Domínguez Jiménez
 	#Fecha: 31 de agosto del 2023
 	#############################
-
 Un mensaje a la terminal para que el usuario vea que se está ejecutando el script y el arhivo está en proceso de "eliminación". Los sleeps simulan el tiempo que se procesa la tarea, aunque no son necesarios estos sleep.
 
 	echo Borrando archivo
@@ -25,9 +23,26 @@ Un mensaje a la terminal para que el usuario vea que se está ejecutando el scri
 	echo ...
 	sleep 2
 	echo .......
-
 Está es la parte importante, ya que el comando **mv** mueve el archivo que ingresamos desde terminal anteriormente al directorio **/Papelera** que creamos desde un principio.
 
 	sudo mv $1 /Papelera
 	sleep 2
 	echo Archivo borrado
+
+Es un código muy sencillo con varias áreas de mejora, pero iré aprendiendo más con la práctica.
+A continuación muestro el código ya completo.
+
+	#!/bin/bash
+	############################
+	#Rodrigo Domínguez Jiménez
+	#Fecha: 31 de agosto del 2023
+	#############################
+	echo Borrando archivo
+	sleep 2
+	echo ...
+	sleep 2
+	echo .......
+	sudo mv $1 /Papelera
+	sleep 2
+	echo Archivo borrado
+
