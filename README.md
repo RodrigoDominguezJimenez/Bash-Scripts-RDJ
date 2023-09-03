@@ -1,7 +1,7 @@
 # Bash-Scripts-RDJ
 En este repositorio se presentan 3 scripts hechos en la clase de Administración de Servidores impartida por el maestro Gerardo Contreras Vega.
 
-###  Script para borrar archivos y ser recuperados en el siguiente script
+##  Script para borrar archivos y ser recuperados en el siguiente script
 Mi estrategía para recuperar estos archivos "eliminados" es crear un directorio con **sudo** y **mkdir** en la raiz llamado **/Papelera** y ahi mover los archivos que el usuario seleccione para "borrar".
 A continuación se explica mi código.
 
@@ -44,7 +44,8 @@ A continuación muestro el código ya completo.
 	sudo mv $1 /Papelera
 	sleep 2
 	echo Archivo borrado
-### Script para recuperar los archivos "eliminados" con el script anterior
+ 
+## Script para recuperar los archivos "eliminados" con el script anterior
 En este script tuve muchos problemas al querer pedir el nombre del archivo y la ruta de destino que el usuario quisiera, tanto intenté que tuve que cambiar de estrategia. Ahora tengo que definirle al usuario la ruta donde se recuperaría el archivo y todo lo que haya estado en papelera se recuperará.
 
 Vayamos al código a explicarlo mejor. Esta parte del código solamente indicamos en interprete de nuestro sistema y un encabezado de presentación.
