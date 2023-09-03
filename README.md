@@ -86,3 +86,55 @@ Este script de igual forma es muy sencillo con varias áreas de mejora, pero ir�
 	sleep 2 
 	sudo mv /Papelera/* $dir_destino
 	echo Archivo recuperado con exito en Escritorio
+ 
+## Script para crear otro script con un encabezado dentro del directorio de /bin/
+Mi estrategia para ese script fué pedirle al usuario el nombre que quisiera para su script para después crearlo con ese nombre, en la parte del encabezado escribir texto dirigido hacia el script del usuario, finalmente mover el script al directorio de **/bin/**.
+
+Ahora vayamos al código.
+Esta parte del código solamente indicamos en interprete de nuestro sistema y un encabezado de presentación.
+
+	#!/bin/bash
+	##################################
+	#Rodrigo Domínguez Jiménez
+	#Fecha:31 de agosto del 2023
+	##################################
+De mi parte fué el crear una variable llamada fecha  la cuál arrojará a fecha de creación del script en el encabezado. Le pido al usuario el nombre de su script y lo capturo en teclado con el comando **read**. Después creo una variable llamada **script_name** la cuál va a crear el script con el nombre que el usuario ingresó desde teclado y agregandole la extensión de Bash **.sh**. 
+En la línea de echo ocurren varias cosas, aquí es la parte donde creó el encabezado en el nuevo script. Primero el comando **-e** va a permitir ejecutar otros caracteres, en mi caso es el salto de linea **\n**. Después el operando **>** en vez de mandar a escribir lo que está dentro del echo a pantalla lo va a direccionar al interior del archivo creado anteriormente (el script del usuario). 
+En la siguiente línea se le dan los permisos correspondientes de ejecución al script creado y las demás lineas son solo mensajes en pantalla sin mucha importancia pero necesarios para la interacción con el usuario.
+
+	fecha=$(date +"%Y-%m-%d")
+	echo Nombre del nuevo script:
+	read script_name
+	script_name="$script_name.sh"
+	echo -e "#!/bin/bash \nScript generado por Rodrigo Dominguez Jimenez el 	$fecha" > "$script_name"
+	chmod +x "$script_name"
+	echo Creando archivo
+	echo ...
+	sleep 2
+Vamos a la parte final del código, dejando los mensajes de echo a un lado aqui se mueve el script creado al directorio ya de **/bin** usando el primer comando **sudo** ya que **/bin/** se encuentra fuera de **/home/**.Y ya habrá quedado hecho este script.
+
+	echo Archivo creado, archivo moviendose a /bin/
+	sudo mv $script_name  /bin
+	echo Script creado en BIN exitosamente
+Este script fué el que más disfruté elaborar. A continuación muestro el código ya completo.
+
+	#!/bin/bash
+	##################################
+	#Rodrigo Domínguez Jiménez
+	#Fecha:31 de agosto del 2023
+	##################################
+	fecha=$(date +"%Y-%m-%d")
+	echo Nombre del nuevo script:
+	read script_name
+	script_name="$script_name.sh"
+	echo -e "#!/bin/bash \nScript generado por Rodrigo Dominguez Jimenez el 	$fecha" > "$script_name"
+	chmod +x "$script_name"
+	echo Creando archivo
+	echo ...
+	sleep 2
+	echo Archivo creado, archivo moviendose a /bin/
+	sudo mv $script_name  /bin
+	echo Script creado en BIN exitosamente
+
+
+ 
